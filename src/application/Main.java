@@ -2,12 +2,12 @@ package application;
 
 public class Main {
     public static void main(String[] args){
-        System.out.println("hello,world");
+        System.out.println("Hello,World");
         String name;
         int age;
         boolean male;
 
-        name = "luis";
+        name = "Camilo";
         age = 30;
         male= true;
 
@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Am I male? " + male);
 
         int currentYear = 2026;
-        int birthYear = 1996;
+        int birthYear = 1997;
         int calculateAge = currentYear - birthYear;
         System.out.println("calculated age : " + calculateAge);
 
