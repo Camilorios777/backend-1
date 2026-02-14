@@ -12,7 +12,7 @@ public class Main {
         male= true;
 
         System.out.println("My name is " + name);
-        System.out.println("i am " + age + "years old");
+        System.out.println("I am " + age + "years old");
         System.out.println("Am I male? " + male);
 
         int currentYear = 2026;
