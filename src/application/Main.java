@@ -4,55 +4,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-
-    // 2. Definición de constantes [cite: 37, 39]
     final static int CURRENT_YEAR = 2026;
-
+    static List<Integer> agesStudentList = new ArrayList<>();
     public static void main(String[] args) {
 
-        // Mensaje de saludo [cite: 38]
-        final String GREETING_MESSAGE = "Welcome to the Java student system";
+        final String GREETING_MESSAGE = "Saludo Estudiantes de Java";
+        String [] namesStudents = {"Juan", "Maria", "Pedro", "Ana", "Luis"};
+        int [] birthYears = {2000, 1998, 2002, 1995, 2001};
 
-        // 3. Arreglo de estudiantes y años de nacimiento [cite: 40, 41, 42]
-        String[] namesStudents = {"Laura", "Pablo", "Maria", "Juan", "Ana"};
-        int[] birthYears = {2000, 2004, 2008, 1991, 1997};
-
-        // 4. Lista de edades (usando Integer para la lista) [cite: 43, 44]
-        List<Integer> agesStudentList = new ArrayList<>();
-
-        // 5. Implementación de lógica [cite: 47]
+// 1. Mostramos el saludo
         showMessage(GREETING_MESSAGE);
 
-        // Llenar la lista de edades [cite: 55, 56]
-        fillAgesList(agesStudentList, birthYears);
+// 2. Llenamos la lista de edades usando el arreglo de años
+        fillAgesList(birthYears);
 
-        // Listar estudiantes [cite: 57, 58]
+// 3. Mostramos la lista final combinando nombres y edades
         listStudents(namesStudents, agesStudentList);
     }
-
-    // --- MÉTODOS ---
-
-    // Muestra mensajes en pantalla [cite: 49, 50, 51]
-    static void showMessage(String message) {
+    static void showMessage(String message){
         System.out.println(message);
     }
 
-    // Retorna la edad calculada [cite: 52, 53, 54]
-    static int calculateAge(int birthYear) {
+    static int calculatedAge (int birthYear) {
         return CURRENT_YEAR - birthYear;
     }
-
-    // Método para llenar la lista calculando edades [cite: 55, 56]
-    static void fillAgesList(List<Integer> agesList, int[] birthYears) {
-        for (int year : birthYears) {
-            agesList.add(calculateAge(year));
+    static List<Integer> fillAgesList( int[] birthYears) {
+        for (int birthYear : birthYears) {
+            int age = calculatedAge(birthYear);
+            agesStudentList.add(age);
+        }
+        return agesStudentList;
+    }
+    static void listStudents(String [] namesStudents, List <Integer> agesStudents) {
+        System.out.println("lista de estudiantes:");
+        for (int i = 0; i < namesStudents.length; i++){
+            System.out.println(namesStudents[i] + " - Edad: " + agesStudents.get(i));
         }
     }
 
-    // Método para mostrar el resultado final [cite: 57, 58]
-    static void listStudents(String[] names, List<Integer> ages) {
-        for (int i = 0; i < names.length; i++) {
-            System.out.println("Student: " + names[i] + " - Age: " + ages.get(i));
-        }
-    }
 }
